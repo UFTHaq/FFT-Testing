@@ -42,5 +42,11 @@ int main() {
     int remain = size - used;
     std::cout << "remain : " << remain << std::endl;
 
+    float new_coef{};
+    if (coef_a_x > coef_b_x) new_coef = (float)coef_a_x / coef_b_x;
+    else new_coef = (float)coef_b_x / coef_a_x;
+    
+    std::cout << "new coef : " << new_coef << std::endl;
+
     return 0;
 }
