@@ -5,7 +5,7 @@ int main() {
     // Write C++ code here
     std::cout << "Try programiz.pro\n\n";
     
-    int size = 26227;
+    int size = 19471;
     std::cout << "size : " << size << std::endl;
     int N{1000};
     
@@ -68,13 +68,13 @@ int main() {
     int low_intense_interval{};
     if (coef_a_x > coef_b_x) {
         new_coef2 = pengali_a / pengali_b;
-        high_intense_interval = interval_a;
-        low_intense_interval = interval_b;
+        high_intense_interval = interval_b;
+        low_intense_interval = interval_a;
     }
     else {
         new_coef2 = pengali_b / pengali_a;
-        high_intense_interval = interval_b;
-        low_intense_interval = interval_a;
+        high_intense_interval = interval_a;
+        low_intense_interval = interval_b;
     }
 
     float lower_pengali{};
@@ -94,7 +94,7 @@ int main() {
     std::cout << "taktik : " << lower_pengali << " x " << seling << " = " << hasil_lower_and_new_coef2 << std::endl;
     int sisa = higher_pengali - hasil_lower_and_new_coef2;
     std::cout << "hasil : " << higher_pengali << " - " << hasil_lower_and_new_coef2 << " = " << sisa << std::endl;
-    std::cout << "sisa " << sisa << " kali untuk " << high_intense_interval << std::endl;
+    std::cout << "sisa " << sisa << " kali untuk " << low_intense_interval << std::endl;
     
     std::cout << std::endl;
     
