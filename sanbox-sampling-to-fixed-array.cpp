@@ -5,7 +5,7 @@ int main() {
     // Write C++ code here
     std::cout << "Try programiz.pro\n\n";
     
-    int size = 14320;
+    int size = 41671;
     std::cout << "size : " << size << std::endl;
     int N{1000};
     
@@ -22,13 +22,17 @@ int main() {
     float sec_f = (float)((int)(coef * 100) % 10) / 100;
     std::cout << "second : " << sec_f << std::endl;
     
+    float third_f = (float)((int)(coef * 1000) % 10) / 1000;
+    std::cout << "third : " << third_f << std::endl;
+    
     float x1 = 1.0 - first_f;
     float x2 = first_f;
     float y = sec_f;
+    float z = third_f;
     
-    float a = x1 - y;
+    float a = x1 - y - z;
     std::cout << "a : " << a << std::endl;
-    float b = x2 + y;
+    float b = x2 + y + z;
     std::cout << "b : " << b << std::endl << std::endl;
     
     int coef_a_x = N * a * interval_a;
@@ -40,13 +44,14 @@ int main() {
     std::cout << "used : " << used << std::endl;
     
     int remain = size - used;
-    std::cout << "remain : " << remain << std::endl;
-
+    std::cout << "remain : " << remain << std::endl << std::endl;
+    
     float new_coef{};
     if (coef_a_x > coef_b_x) new_coef = (float)coef_a_x / coef_b_x;
     else new_coef = (float)coef_b_x / coef_a_x;
     
     std::cout << "new coef : " << new_coef << std::endl;
-
+    
+    
     return 0;
 }
