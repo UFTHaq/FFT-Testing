@@ -1,50 +1,55 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
+#include <cmath>
 
 int main() {
     // Write C++ code here
     std::cout << "Try programiz.pro\n\n";
     
-    int size = 19471;
+    int size = 29999;
     std::cout << "size : " << size << std::endl;
     int N{1000};
     
-    float coef = (float)size / N;
+    double coef = (double)size / N;
     std::cout << "real coef : " << coef << std::endl;
     int interval_a = (int)coef;
     std::cout << "int coef : " << interval_a << std::endl;
     int interval_b = interval_a + 1;
     std::cout << "int coef++ : " << interval_b << std::endl;
     
-    float first_f = (float)((int)(coef * 10) % 10) / 10;
+    double first_f = (double)((int)(coef * 10) % 10) / 10;
     std::cout << "first : " << first_f << std::endl;
     
-    float sec_f = (float)((int)(coef * 100) % 10) / 100;
+    double sec_f = (double)((int)(coef * 100) % 10) / 100;
     std::cout << "second : " << sec_f << std::endl;
     
-    float third_f = (float)((int)(coef * 1000) % 10) / 1000;
+    double third_f = (double)((int)(coef * 1000) % 10) / 1000;
     std::cout << "third : " << third_f << std::endl;
     
-    float x1 = 1.0 - first_f;
-    float x2 = first_f;
-    float y = sec_f;
-    float z = third_f;
+    double x1 = 1.0 - first_f;
+    double x2 = first_f;
+    double y = sec_f;
+    double z = third_f;
     
-    float a = x1 - y - z;
+    double a = x1 - y - z;
     std::cout << "a : " << a << std::endl;
-    float b = x2 + y + z;
+    double b = x2 + y + z;
     std::cout << "b : " << b << std::endl << std::endl;
     
-    // float a = x1 - y;
+    // double a = x1 - y;
     // std::cout << "a : " << a << std::endl;
-    // float b = x2 + y;
+    // double b = x2 + y;
     // std::cout << "b : " << b << std::endl << std::endl;
+    int coefa = std::round(N * 10 * a) / 10;
+    int coefb = std::round(N * 10 * b) / 10;
+    std::cout << N << " x " << a << " = " << coefa << std::endl;
+    std::cout << N << " x " << b << " = " << coefb << std::endl;
+
+    int coef_a_x = coefa * interval_a;
+    int coef_b_x = coefb * interval_b;
     
-    float coef_a_x = N * a * interval_a;
-    float coef_b_x = N * b * interval_b;
-    
-    std::cout << "coef_a_x -> " << interval_a << " x " << (float)coef_a_x / interval_a << " = " << coef_a_x << std::endl;
-    std::cout << "coef_b_x -> " << interval_b << " x " << (float)coef_b_x / interval_b << " = " << coef_b_x << std::endl;
+    std::cout << "coef_a_x -> " << interval_a << " x " << coef_a_x / interval_a << " = " << coef_a_x << std::endl;
+    std::cout << "coef_b_x -> " << interval_b << " x " << coef_b_x / interval_b << " = " << coef_b_x << std::endl;
     
     int used = coef_a_x + coef_b_x;
     std::cout << "used : " << used << std::endl;
@@ -53,17 +58,17 @@ int main() {
     std::cout << "remain : " << remain << std::endl;
     std::cout << std::endl;
     
-    float new_coef{};
-    if (coef_a_x > coef_b_x) new_coef = (float)coef_a_x / coef_b_x;
-    else new_coef = (float)coef_b_x / coef_a_x;
+    double new_coef{};
+    if (coef_a_x > coef_b_x) new_coef = (double)coef_a_x / coef_b_x;
+    else new_coef = (double)coef_b_x / coef_a_x;
     
     std::cout << "new coef : " << new_coef << std::endl;
     std::cout << std::endl;
     
-    float pengali_a = ((float)coef_a_x / interval_a);
-    float pengali_b = ((float)coef_b_x / interval_b);
+    double pengali_a = ((double)coef_a_x / interval_a);
+    double pengali_b = ((double)coef_b_x / interval_b);
     
-    float new_coef2{};
+    double new_coef2{};
     int high_intense_interval{};
     int low_intense_interval{};
     if (coef_a_x > coef_b_x) {
@@ -77,8 +82,8 @@ int main() {
         low_intense_interval = interval_b;
     }
 
-    float lower_pengali{};
-    float higher_pengali{};
+    double lower_pengali{};
+    double higher_pengali{};
     if (pengali_a > pengali_b) {
         higher_pengali = pengali_a;
         lower_pengali = pengali_b;
