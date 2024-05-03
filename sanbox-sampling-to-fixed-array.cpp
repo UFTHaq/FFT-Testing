@@ -5,7 +5,7 @@ int main() {
     // Write C++ code here
     std::cout << "Try programiz.pro\n\n";
     
-    int size = 41671;
+    int size = 22129;
     std::cout << "size : " << size << std::endl;
     int N{1000};
     
@@ -34,6 +34,11 @@ int main() {
     std::cout << "a : " << a << std::endl;
     float b = x2 + y + z;
     std::cout << "b : " << b << std::endl << std::endl;
+    
+    // float a = x1 - y;
+    // std::cout << "a : " << a << std::endl;
+    // float b = x2 + y;
+    // std::cout << "b : " << b << std::endl << std::endl;
     
     int coef_a_x = N * a * interval_a;
     std::cout << "coef_a_x -> " << interval_a << " : " << coef_a_x << std::endl;
