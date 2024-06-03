@@ -62,11 +62,16 @@ int main() {
         float deltaTime = GetFrameTime();
         time += deltaTime;
 
-        // Shift data to the left
+        //// Shift data to the left
+        //for (int y = 0; y < height; y++) {
+        //    for (int x = 0; x < width - 1; x++) {
+        //        data[y * width + x] = data[y * width + x + 1];
+        //    }
+        //}
+
+        // Shift data to the left using std::memmove
         for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width - 1; x++) {
-                data[y * width + x] = data[y * width + x + 1];
-            }
+            std::memmove(&data[y * width], &data[y * width + 1], (width - 1) * sizeof(Color));
         }
 
         // Add new data to the rightmost column
