@@ -62,14 +62,19 @@ int main() {
         float deltaTime = GetFrameTime();
         time += deltaTime;
 
-        // Modify the data array based on delta time
+        // Shift data to the left
         for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
-                unsigned char r = (unsigned char)((x + time * 10) * 255 / width) % 256;
-                unsigned char g = (unsigned char)((y + time * 20) * 255 / height) % 256;
-                unsigned char b = (unsigned char)((x + y + time * 300) * 255 / (width + height)) % 256;
-                data[y * width + x] = Color{ r, g, b, 100 };
+            for (int x = 0; x < width - 1; x++) {
+                data[y * width + x] = data[y * width + x + 1];
             }
+        }
+
+        // Add new data to the rightmost column
+        for (int y = 0; y < height; y++) {
+            unsigned char r = (unsigned char)((time * 40) * 255 / width) % 256;
+            unsigned char g = (unsigned char)((y + time * 20) * 255 / height) % 256;
+            unsigned char b = (unsigned char)((time * 30) * 255 / (width + height)) % 256;
+            data[y * width + (width - 1)] = Color{ r, g, b, 100 };
         }
 
         // Update the Image with the modified data
